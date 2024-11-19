@@ -4,3 +4,5 @@ id_rsa
 terraform.tfvars.6-servers
 hostnames.tfvars-5-servers.txt
 terraform.tfvars.6-servers
+terraform_output.json*
+.terraform*
