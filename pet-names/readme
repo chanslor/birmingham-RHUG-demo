@@ -1,0 +1,36 @@
+
+Customize the Pet Name Generation:
+
+Change Word Count:
+
+To generate names with more words, adjust the length parameter:
+
+hcl
+Copy code
+length = 3  # e.g., "quirky-happy-panda"
+Change Separator:
+
+Use a different separator or remove it:
+
+hcl
+Copy code
+separator = "_"  # e.g., "bouncy_fluffy_kitten"
+Or:
+
+hcl
+Copy code
+separator = ""   # e.g., "sleepybear"
+Set a Prefix or Suffix:
+
+Add a prefix or suffix to the name:
+
+hcl
+Copy code
+resource "random_pet" "pet_name" {
+  length    = 2
+  separator = "-"
+  prefix    = "pet-"
+  suffix    = "-001"
+}
+Resulting in names like pet-happy-dog-001.
+
