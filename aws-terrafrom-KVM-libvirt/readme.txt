@@ -58,11 +58,17 @@ project/
 │       ├── variables.tf
 │       └── outputs.tf
 
+ virsh console server1 ( CTRL + SHIFT + ]  to exit )
 
  terraform init
  terraform plan -var-file="hostnames.tfvars"
 
- virsh console server1 ( CTRL + SHIFT + ]  to exit )
+ terraform output -json > terraform_output.json
+
+ ansible-inventory -i ./terraform_inventory.py --list
+
+ ansible-playbook -i ./terraform_inventory.py  check-httpd-playbook.yml
 
  terraform destroy -var-file="hostnames.tfvars" -auto-approve
+
 
